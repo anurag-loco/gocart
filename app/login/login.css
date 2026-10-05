@@ -1,4 +1,5 @@
-.auth-page {
+.auth-page,
+.auth-form-component {
     --auth-font-family: inherit;
     --auth-heading-size: 26px;
     --auth-body-size: 16px;
@@ -10,6 +11,7 @@
     --auth-color-border: #8f9695;
     --auth-color-divider: #ececec;
     --auth-color-soft: #f8f8f8;
+    --auth-color-form-surface: #eaf8f4;
     --auth-color-white: #ffffff;
     --auth-color-accent: #00c29f;
     --auth-color-accent-dark: #007e68;
@@ -27,7 +29,9 @@
     --auth-space-4: 32px;
     --auth-space-5: 40px;
     --auth-card-width: 600px;
+}
 
+.auth-page {
     box-sizing: border-box;
     display: grid;
     min-height: 100svh;
@@ -40,8 +44,20 @@
 
 .auth-page *,
 .auth-page *::before,
-.auth-page *::after {
+.auth-page *::after,
+.auth-form-component,
+.auth-form-component *,
+.auth-form-component *::before,
+.auth-form-component *::after {
     box-sizing: border-box;
+}
+
+.auth-form-component {
+    width: 100%;
+    padding: var(--auth-space-3);
+    background: var(--auth-color-form-surface);
+    color: var(--auth-color-ink);
+    font-family: var(--auth-font-family);
 }
 
 .auth-card {
@@ -238,12 +254,36 @@
         --auth-heading-size: 24px;
     }
 
+    .auth-form-component {
+        padding: 12px var(--auth-space-2);
+    }
+
+    .auth-form {
+        gap: var(--auth-space-2);
+    }
+
+    .auth-divider {
+        margin: 20px 0 12px;
+    }
+
+    .auth-social-title {
+        margin-bottom: var(--auth-space-1);
+    }
+
+    .auth-social-option {
+        min-height: 92px;
+        gap: var(--auth-space-1);
+    }
+
+    .auth-footer-copy {
+        margin-top: var(--auth-space-2);
+    }
+
     .auth-social-grid {
         gap: var(--auth-space-1);
     }
 
     .auth-social-option {
-        min-height: 108px;
         align-items: center;
         padding: var(--auth-space-1);
         font-size: var(--auth-label-size);

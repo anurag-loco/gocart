@@ -1,7 +1,9 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import "./login.css";
 
 const socialOptions = [
     { name: "Google", image: "/figma/social-login-image@3x.png" },
@@ -18,7 +20,7 @@ export default function LoginForm() {
     };
 
     return (
-        <>
+        <div className="auth-form-component">
             <form className="auth-form" onSubmit={handleSubmit}>
                 <div className="auth-fields">
                     <div className="auth-field">
@@ -74,6 +76,10 @@ export default function LoginForm() {
                     ))}
                 </div>
             </section>
-        </>
+
+            <p className="auth-footer-copy">
+                Want to sell on GoCart? <Link href="/create-store">Create a store</Link>
+            </p>
+        </div>
     );
 }
