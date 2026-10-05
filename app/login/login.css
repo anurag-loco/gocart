@@ -19,6 +19,8 @@
     --auth-color-accent-hover: #00a987;
     --auth-color-focus-ring: rgb(0 194 159 / 18%);
     --auth-color-focus-outline: rgb(0 194 159 / 35%);
+    --auth-color-error: #b42318;
+    --auth-color-error-ring: rgb(180 35 24 / 14%);
     --auth-color-card-shadow: rgb(23 30 29 / 7%);
     --auth-radius-field: 4px;
     --auth-radius-card: 6px;
@@ -128,6 +130,11 @@
 .auth-input:focus {
     border-color: var(--auth-color-accent);
     box-shadow: 0 0 0 3px var(--auth-color-focus-ring);
+}
+
+.auth-input:user-invalid {
+    border-color: var(--auth-color-error);
+    box-shadow: 0 0 0 3px var(--auth-color-error-ring);
 }
 
 .auth-field-icon {
